@@ -14,14 +14,23 @@ const port=process.env.PORT || 4000;
 connectDB()
 connectCloudinary()
 
+
+app.use(cors({
+    origin: "*", // Temporarily allow all origins to test
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization"
+  }));
+  
 // middleware
 app.use(json())
 // app.use(cors())
-app.use(cors({
-    origin: ['https://textile-ecomerce-website-mmly7bsli.vercel.app', 'https://textile-ecomerce-website-seven.vercel.app/', 'https://textile-ecomerce-website.vercel.app'],
-    methods: 'GET,POST,PUT,DELETE',
-    allowedHeaders: 'Content-Type,Authorization'
-  }));
+// app.use(cors({
+//     origin: ['https://textile-ecomerce-website-mmly7bsli.vercel.app', 'https://textile-ecomerce-website-seven.vercel.app/', 'https://textile-ecomerce-website.vercel.app'],
+//     methods: 'GET,POST,PUT,DELETE',
+//     allowedHeaders: 'Content-Type,Authorization'
+//   }));
+
+
   
 
 
