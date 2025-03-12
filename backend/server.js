@@ -15,12 +15,21 @@ connectDB()
 connectCloudinary()
 
 
+// app.use(cors({
+//     origin: "*", // Temporarily allow all origins to test
+//     methods: "GET,POST,PUT,DELETE",
+//     allowedHeaders: "Content-Type,Authorization"
+//   }));
+
 app.use(cors({
-    origin: "*", // Temporarily allow all origins to test
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization"
+    origin: "*",  
+    methods: 'GET,POST,PUT,DELETE',
+    allowedHeaders: ['Content-Type', 'Authorization', 'token'], // ✅ Allow custom headers
+    credentials: true // ✅ If using cookies or authentication
   }));
   
+
+
 // middleware
 app.use(json())
 // app.use(cors())
