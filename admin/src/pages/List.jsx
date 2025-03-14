@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios';
 import { backendurl, currency } from '../App';
-import { set } from 'mongoose';
 import { toast } from 'react-toastify';
 
 const List = () => {
